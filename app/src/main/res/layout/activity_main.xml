@@ -6,10 +6,16 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.commentdialog.MainActivity">
 
+    <Button
+        android:id="@+id/share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分享" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></LinearLayout>
+        android:layout_weight="1" />
 
     <com.example.administrator.commentdialog.comment.CommentView
         android:id="@+id/comment_view"

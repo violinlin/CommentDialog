@@ -5,10 +5,12 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.administrator.commentdialog.comment.CommentDialog;
 import com.example.administrator.commentdialog.comment.CommentView;
+import com.example.administrator.commentdialog.share.ShareDialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button shareBtn = (Button) findViewById(R.id.share);
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ShareDialog(v.getContext()).show();
+            }
+        });
+
         commentView = (CommentView) findViewById(R.id.comment_view);
         commentView.setOnClickListener(new View.OnClickListener() {
             @Override
